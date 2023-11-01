@@ -2,9 +2,9 @@
 # Build stage
 #
 FROM maven:4.0.0-jdk-21-slim AS build
-COPY src /home/app/src
+COPY . .
 COPY pom.xml /home/app
-RUN mvn -f /home/app/pom.xml clean package
+RUN mvn clean package -DskipTests
 
 #
 # Package stage
