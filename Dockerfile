@@ -8,6 +8,6 @@ RUN mvn package -DskipTests
 
 #Etapa de ejecución
 FROM openjdk:17-jdk
-COPY --from=build TB2-backend-v2/CargaSinEstres/target/CargaSinEstres-0.0.1-SNAPSHOT.jar /usr/local/lib/demo.jar
+COPY --from=build target/CargaSinEstres-0.0.1-SNAPSHOT.jar /usr/local/lib/demo.jar
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","/usr/local/lib/demo.jar"]
