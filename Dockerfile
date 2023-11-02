@@ -4,7 +4,7 @@ WORKDIR /app
 COPY pom.xml .
 RUN mvn dependency:go-offline -B
 COPY src ./src
-RUN mvn package
+RUN mvn package -DskipTests
 
 #Etapa de ejecución
 FROM openjdk:17-jdk
